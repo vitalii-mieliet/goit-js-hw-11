@@ -1,7 +1,11 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const simpleLightbox = new SimpleLightbox('.js-gallery .image-link');
+const simpleLightbox = new SimpleLightbox('.js-gallery .image-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+const gallery = document.querySelector('.js-gallery');
 
 function createGallery(images) {
   return images
@@ -37,7 +41,7 @@ function createGallery(images) {
                     </li>
                     <li class="info-item">
                       <p class="info-value-tittle">Comments</p>
-                      <p class="label" data-comments>${comments}</p>
+                      <p class="info-value" data-comments>${comments}</p>
                     </li>
                     <li class="info-item">
                       <p class="info-value-tittle">Downloads</p>
@@ -50,7 +54,7 @@ function createGallery(images) {
     .join('');
 }
 function clearGallery() {
-  simpleLightbox.refresh();
+  gallery.innerHTML = '';
 }
 function showLoader(element) {
   element.classList.remove('hidden');
@@ -58,4 +62,4 @@ function showLoader(element) {
 function hideLoader(element) {
   element.classList.add('hidden');
 }
-export { createGallery, clearGallery, showLoader, hideLoader };
+export { createGallery, clearGallery, showLoader, hideLoader, simpleLightbox };

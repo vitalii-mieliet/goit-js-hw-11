@@ -7,6 +7,7 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
+  simpleLightbox,
 } from './js/render-functions';
 
 const formEl = document.querySelector('.js-form');
@@ -18,16 +19,41 @@ formEl.addEventListener('submit', handleFormSubmit);
 function handleFormSubmit(event) {
   event.preventDefault();
 
-  const query = event.target.elements['search-text'].value;
+  const query = event.target.elements['search-text'].value.trim();
+  if (query === '') {
+    iziToast.warning({
+      position: 'topRight',
+      message: 'Please enter the correct query!',
+    });
+    return;
+  }
+  clearGallery();
   showLoader(loader);
 
   getImagesByQuery(query)
     .then(data => {
+      if (data.hits.length === 0) {
+        iziToast.warning({
+          position: 'topRight',
+          message:
+            'Sorry, there are no images matching your search query. Please try again!',
+        });
+        clearGallery();
+        return;
+      }
+
       gallery.innerHTML = createGallery(data.hits);
-      clearGallery();
+      simpleLightbox.refresh();
     })
     .catch(error => {
-      alert(error);
+      console.log(error);
+      iziToast.error({
+        position: 'topRight',
+        message: `ERROR: ${error}`,
+      });
     })
-    .finally(() => hideLoader(loader));
+    .finally(() => {
+      hideLoader(loader);
+      formEl.reset();
+    });
 }

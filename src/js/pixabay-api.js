@@ -16,18 +16,7 @@ export function getImagesByQuery(query) {
       orientation: 'horizontal',
       safesearch: true,
     },
-  }).then(res => res.data);
+  })
+    .then(res => res.data)
+    .catch(error => error);
 }
-
-/*Список параметрів рядка запиту, які тобі обов'язково необхідно вказати:
-
-key — твій унікальний ключ доступу до API.
-q — слово для пошуку. Те, що буде вводити користувач.
-image_type — тип зображення. Потрібні тільки фотографії, тому постав значення photo.
-orientation — орієнтація фотографії. Постав значення horizontal.
-safesearch — фільтр за віком. Постав значення true. 
-
-https://pixabay.com/api/docs/#api_search_images
-*/
-
-//! Sorry, there are no images matching your search query. Please try again!

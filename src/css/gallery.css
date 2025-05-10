@@ -11,7 +11,12 @@
   margin: 0 auto;
 }
 
-.wrapper-form {
+.form {
+  display: block;
+  margin: 10px auto;
+}
+
+.form-wraper {
   margin-top: 25px;
   display: flex;
   justify-content: center;
@@ -39,24 +44,28 @@ form button {
   border: none;
   padding: 8px 16px;
   width: 91px;
-  background: #018c44;
+  background: #1907df;
   color: whitesmoke;
 }
 
 form button:hover {
-  background: #17aa5e;
+  background: #1905f4;
 }
 
 img {
   display: block;
   width: 360px;
-  height: 200px;
+  height: 150px;
 }
 
 .gallery-image {
   object-fit: cover;
 
   transition: transform 250ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.gallery-item {
+  border: 1px solid #808080;
 }
 
 .gallery-item:hover {
@@ -68,12 +77,9 @@ img {
   justify-content: space-around;
   align-items: center;
   gap: 24px;
-  background-color: azure;
-  border-bottom: 1px solid #808080;
-  border-left: 1px solid #808080;
-  border-right: 1px solid #808080;
+  background-color: #373333;
   width: 360px;
-  height: 48px;
+  height: 50px;
 }
 
 .info-item {
@@ -87,7 +93,7 @@ img {
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: 0.04em;
-  color: #2e2f42;
+  color: whitesmoke;
 }
 
 .info-value {
@@ -95,55 +101,7 @@ img {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #2e2f42;
-}
-.loader-wraper {
-  display: flex;
-  justify-content: center;
-  padding: 32px 0;
-}
-
-.loader {
-  position: relative;
-  display: flex;
-}
-.loader:before,
-.loader:after {
-  content: '';
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  position: relative;
-  margin: 0 5px;
-  border-radius: 50%;
-  color: #fff;
-  background: currentColor;
-  box-shadow: 50px 0, -50px 0;
-  animation: left 1s infinite ease-in-out;
-}
-.loader:after {
-  color: #ff3d00;
-  animation: right 1.1s infinite ease-in-out;
-}
-
-@keyframes right {
-  0%,
-  100% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-@keyframes left {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  color: whitesmoke;
 }
 
 .hidden {
