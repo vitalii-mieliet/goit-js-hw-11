@@ -42,6 +42,7 @@ function handleFormSubmit(event) {
       }
 
       createGallery(data.hits);
+      addAnimationToCards(); // animation
       simpleLightbox.refresh();
     })
     .catch(error => {
@@ -55,4 +56,14 @@ function handleFormSubmit(event) {
       hideLoader(loader);
       formEl.reset();
     });
+}
+
+// ======================
+function addAnimationToCards() {
+  const cards = document.querySelectorAll('.gallery-item');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('show');
+    }, index * 100); // Задержка между появлением карточек
+  });
 }
