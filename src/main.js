@@ -11,7 +11,6 @@ import {
 } from './js/render-functions';
 
 const formEl = document.querySelector('.js-form');
-const gallery = document.querySelector('.js-gallery');
 const loader = document.querySelector('.js-loader');
 
 formEl.addEventListener('submit', handleFormSubmit);
@@ -42,7 +41,7 @@ function handleFormSubmit(event) {
         return;
       }
 
-      gallery.innerHTML = createGallery(data.hits);
+      createGallery(data.hits);
       simpleLightbox.refresh();
     })
     .catch(error => {

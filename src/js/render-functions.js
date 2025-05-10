@@ -8,7 +8,7 @@ const simpleLightbox = new SimpleLightbox('.js-gallery .image-link', {
 const gallery = document.querySelector('.js-gallery');
 
 function createGallery(images) {
-  return images
+  gallery.innerHTML = images
     .map(
       ({
         tags,
