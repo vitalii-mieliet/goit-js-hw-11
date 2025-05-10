@@ -59,6 +59,7 @@ function handleFormSubmit(event) {
 }
 
 // ======================
+
 function addAnimationToCards() {
   const cards = document.querySelectorAll('.gallery-item');
   cards.forEach((card, index) => {

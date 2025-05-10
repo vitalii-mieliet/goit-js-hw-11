@@ -4,10 +4,9 @@
 }
 
 .form-wraper {
-  margin-top: 25px;
+  padding: 25px 0;
   display: flex;
   justify-content: center;
-  gap: 8px;
 }
 
 form input {
@@ -31,12 +30,12 @@ form button {
   border: none;
   padding: 8px 16px;
   width: 91px;
-  background: #1907df;
+  background: #3b2cde;
   color: whitesmoke;
 }
 
 form button:hover {
-  background: #1905f4;
+  background: #2817de;
 }
 
 img {
@@ -53,10 +52,11 @@ img {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  padding: 24px 0;
+
   margin: 0 auto;
 }
 .gallery-item {
+  border-radius: 4px;
   opacity: 0;
   position: relative;
   transform: translateX(-100vw);
@@ -70,8 +70,6 @@ img {
 
 .gallery-image {
   object-fit: cover;
-
-  transition: transform 250ms ease-in-out, box-shadow 300ms ease-in-out;
 }
 
 .gallery-item {
@@ -80,7 +78,7 @@ img {
 
 .gallery-item:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 12px rgba(39, 38, 38, 0.7);
 }
 .image-info {
   display: flex;
@@ -111,7 +109,7 @@ img {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: whitesmoke;
+  color: rgb(95, 176, 223);
 }
 
 .hidden {
